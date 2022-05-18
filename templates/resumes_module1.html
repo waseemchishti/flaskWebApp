@@ -1,0 +1,209 @@
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Extravis Resume Parsing</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+<style>
+.tile{
+	margin-left:45px;
+	height:90px;
+	background-color:white-smoke;
+	color:gray;
+	border-left: 3px solid green;
+	box-shadow: 8px 15px 5px Gainsboro;
+}
+.h4{
+	float:right;
+	margin-top:15px;
+}
+.img{
+	height:60px;
+	width:60px;
+	float:left;
+	margin-top:15px;
+	border: 3px solid Gainsboro;"
+}
+.abc:hover{
+		background-color: #11114e;
+		box-shadow: 5px 10px 5px #7fff00;
+
+}
+</style>
+
+</head>
+<!--....Dashboard header with logo and Pandas Profile Report.....-->
+
+   <body style="background-color:#f0f0f0">
+
+   <script type="text/javascript">
+
+        $(document).ready( function () {
+             alert("Successfully found the results: ")
+         } );
+
+    </script>
+
+		<div style="width:100%; height:20px; background-color:#0066CC; float:left"></div>
+     <div class="", style="height:100px;width:100%; background-color:white; float:left">
+			
+				<img src="/static/extravis.png" style="height:70px; float:left;"/>	
+				
+         <a class="navbar-brand"  style="color:#66CC00;margin-left:20px;margin-top:12px;font-size:22px; text-shadow: 2px 1px 1px #11114e; float:left">Human Free Recruitment System</a>
+					<div style="width:100%; height:6px; background-color:#4C9900; float:left"></div>
+				<div style="width:100%; height:5px; background-color:#11114e; float:left"></div>				
+
+		</div>		
+
+		
+
+    
+
+    <p><br/></p>
+	
+   </br>
+   </br>
+	<!--....Go Back Button Start .....-->
+   <div class="form-group col-md-8 ">
+   
+		 </br>
+         <p><a href="{{url_for('resume_folder')}}" class="btn btn-primary" style="margin-left:40px" >Go Back</a></p>
+	 </div>
+	 
+	 <!--....Go Back Button End .....-->
+<!--....Data Table .....-->
+
+	<!--....Data Table .....-->
+<div class="row">
+	<div class="col-md-12">
+		<div class="col-md-1"></div>
+			<div class="col-md-10">
+				<table id="example" class="table table-striped table-bordered">
+						<thead style="background:navy; color:white">
+								<tr>
+											
+										<td>City: </td>
+										<td>Location: </td>
+										<td>University: </td>
+										<td>Contacts: </td>
+										<td>Email Address: </td>
+										<td>URLS: </td>
+										
+								</tr>
+						</thead>
+						<tbody>
+					
+							{% for a in range(length1)%}
+
+  
+							
+								<tr>
+										<td>{{dic['City'][a]}} </td>
+										<td>{{dic['Location'][a]}} </td>
+										<td>{{dic['University'][a]}}</td>
+										<td>{{dic['Contact'][a]}} </td>
+										<td>{{dic['Email'][a]}}</td>
+										<td>{{dic['URLS'][a]}}</td>
+
+					
+								</tr>
+					
+			
+			 {% endfor %}
+					
+					
+			
+						</tbody>
+				</table>
+			</div>
+			<div class="col-md-1"></div>
+	</div>
+</div>
+
+
+
+	<!--....Data Table 2--------------------------------------------------------------------.....-->
+<div class="row">
+	<div class="col-md-12">
+		<div class="col-md-1"></div>
+			<div class="col-md-10">
+				<table id="example" class="table table-striped table-bordered">
+						<thead style="background:navy; color:white">
+								<tr>
+											
+										<td>Date: </td>
+										<!-- <td>Skill: </td>--->
+										<!--<td>Location: </td>
+										<!-- <td>Organization: </td> --->
+										<td>NORP: </td>
+										<td>Languages: </td>
+										<td>Summary: </td>
+										<td>NewSkills: </td>
+										<td>match_Item: </td>
+										<td>match_Item_Count: </td>
+										
+								</tr>
+						</thead>
+						<tbody>
+					
+							{% for a in range(length2)%}
+
+  
+							
+								<tr>
+										<td>{{dic2['Date'][a]}}</td>
+										<!--<td>{{dic2['Skill'][a]}} </td>--->
+										<!--<td>{{dic2['Location'][a]}} </td>--->
+										<!--<td>{{dic2['Organization'][a]}}</td>--->
+										<td>{{dic2['NORP'][a]}}</td>
+										
+										<td>{{dic2['Languages'][a]}} </td>
+										<td>{{dic2['summary'][a]}}</td>
+										<td>{{dic2['NewSkills'][a]}} </td>
+										<td>{{dic2['match_Item'][a]}}</td>
+										<td>{{dic2['match_Item_Count'][a]}}</td>
+
+					
+								</tr>
+					
+			
+							{% endfor %}
+					
+					
+			
+						</tbody>
+				</table>
+			</div>
+			<div class="col-md-1"></div>
+	</div>
+</div>
+
+
+
+<script>
+// Basic example
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+
+
+   </body>
+
+</div>
+</html>
+
+{% endblock %}
